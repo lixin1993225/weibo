@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>班级说说-注册</title>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/bootstrap-theme.min.css">	
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery.Jcrop.min.js"></script>
+	<style>
+		.sigin{
+			margin-top:100px;
+		}
+		.warnbox{
+			position:absolute;
+			top:50px;
+			left:0;
+			right:0;
+			margin: auto;
+		}
+		.warnsuc,.warndef{
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<!-- header -->
+	<%- include('./header.ejs',{"where":"sigin"})%>
+	<div class="sigin container">
+  		<div class="form-group">
+    		<label for="useraccount">账号</label>
+    		<input type="text" class="form-control" id="useraccount" placeholder="useraccount">
+  		</div>
+  		<div class="form-group">
+    		<label for="exampleInputPassword1">密码</label>
+    		<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  		</div>
+  		<button type="submit" class="btn btn-success pull-right siginbtn">登录</button>
+	</div>
+	<div class="warnbox container">
+		<div class="alert alert-success text-center warnsuc" role="alert">登录成功</div>
+		<div class="alert alert-danger text-center warndef" role="alert"></div>
+	</div>
+	<script>
+		$("input").focus(function(){
+			$(".warnbox div").slideUp(600)
+		});
+		$(".siginbtn").click(function(){
+			$.ajax({
+				url:"/login",
+				method:"POST",
+				data:{
+					useraccount:$('#useraccount').val(),
+					password:$("#exampleInputPassword1").val()
+				},
+				success:(res)=>{
+					if(res.status==1){
+						$(".warnsuc").slideDown(600);
+						setTimeout(function(){
+							window.location.href= "/"
+						},600)
+					}else{
+						$(".warndef").text(res.desc).slideDown(600);
+					}
+				}
+			})
+		})
+	</script>
+</body>
+</html>
