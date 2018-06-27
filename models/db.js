@@ -47,7 +47,24 @@ function find(ku,collectionName,json,callback,args){
 		db.close();
 	})
 }
+//更改
+function changeData(ku,collectionName,json1,json2,callback){
+	_connectDB((err,db)=>{
+		if(err) throw err;
+		var dbo = db.db(ku);
+		dbo.collection(collectionName).updateMany(json1,json2,(err2,res)=>{
+			if(err2){
+				callback(err2,null);
+				db.close();
+			}else{
+				callback(null,res);
+				db.close();
+			}
+		})
+	})
+};
 module.exports = {
 	insertOne:insertOne,
-	find:find
+	find:find,
+	changeData:changeData
 }
