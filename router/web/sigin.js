@@ -16,7 +16,11 @@ module.exports = function(){
 				res.send({
 					status:0,
 					data:null,
+<<<<<<< HEAD
 					msg:'已经注册啦胸帝'
+=======
+					desc:'已经注册啦胸帝'
+>>>>>>> 007235a8f260b50c59e982f2f4993051520aa895
 				}).end()
 			}else{
 				mongoDb.insertOne("weibo","userInf",{useraccount:req.body.useraccount,password:md5.md5(req.body.password+md5.md5_suffix)},(err,result)=>{
@@ -24,7 +28,11 @@ module.exports = function(){
 						resData.response({
 							status:2,
 							data:null,
+<<<<<<< HEAD
 							msg:'后台大胸帝的错误'
+=======
+							desc:'后台大胸帝的错误'
+>>>>>>> 007235a8f260b50c59e982f2f4993051520aa895
 						})
 					}else{
 						req.session.login = true;
@@ -32,7 +40,11 @@ module.exports = function(){
 						res.send({
 							status:1,
 							data:'yes',
+<<<<<<< HEAD
 							msg:'注册成功'
+=======
+							desc:'注册成功'
+>>>>>>> 007235a8f260b50c59e982f2f4993051520aa895
 						}).end();
 					}
 				})

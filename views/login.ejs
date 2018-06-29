@@ -56,13 +56,20 @@
 				},
 				success:(res)=>{
 					if(res.status==1){
+<<<<<<< HEAD
 			            localStorage.removeItem("imgHead")
+=======
+>>>>>>> 007235a8f260b50c59e982f2f4993051520aa895
 						$(".warnsuc").slideDown(600);
 						setTimeout(function(){
 							window.location.href= "/"
 						},600)
 					}else{
+<<<<<<< HEAD
 						$(".warndef").text(res.msg).slideDown(600);
+=======
+						$(".warndef").text(res.desc).slideDown(600);
+>>>>>>> 007235a8f260b50c59e982f2f4993051520aa895
 					}
 				}
 			})

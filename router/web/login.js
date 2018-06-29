@@ -16,7 +16,11 @@ module.exports = function(){
 				res.send({
 					status:0,
 					data:null,
+<<<<<<< HEAD
 					msg:'查无此人'
+=======
+					desc:'查无此人'
+>>>>>>> 007235a8f260b50c59e982f2f4993051520aa895
 				}).end()
 			}else{
 				if(result[0].password==md5.md5(req.body.password+md5.md5_suffix)){
@@ -25,13 +29,21 @@ module.exports = function(){
 					res.send({
 						status:1,
 						data:'yes',
+<<<<<<< HEAD
 						msg:'登录成功'
+=======
+						desc:'登录成功'
+>>>>>>> 007235a8f260b50c59e982f2f4993051520aa895
 					}).end()
 				}else{
 					res.send({
 						status:2,
 						data:'no',
+<<<<<<< HEAD
 						msg:'用户名密码错误'
+=======
+						desc:'用户名密码错误'
+>>>>>>> 007235a8f260b50c59e982f2f4993051520aa895
 					}).end()
 				}
 			}
