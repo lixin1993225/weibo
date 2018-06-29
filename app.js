@@ -1,4 +1,5 @@
 const express = require("express");
+const http = require("http");
 const fs = require("fs");
 const gm = require("gm");
 const bodyParser = require("body-parser");
@@ -9,12 +10,14 @@ const cookieParser = require("cookie-parser");
 const cookieSession = require("cookie-session");
 const multer = require("multer");
 const imgObj = multer({dest:"./images/upload"});
+
 //模版引擎
 app.set("views","./views");
 app.set("view engine","html");
 app.engine("html",consolidate.ejs);
+
 //post请求
-app.use(bodyParser.urlencoded({extend:false}))
+app.use(bodyParser.urlencoded({extend:false}));
 //session存储
 app.use(cookieSession({
 	name:"sigin",

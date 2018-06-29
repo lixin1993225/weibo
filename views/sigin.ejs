@@ -56,12 +56,13 @@
 				},
 				success:(res)=>{
 					if(res.status==1){
+			            localStorage.removeItem("imgHead")
 						$(".warnsuc").slideDown(600);
 						setTimeout(function(){
 							window.location.href= "/"
 						},600)
 					}else{
-						$(".warndef").text(res.desc).slideDown(600);
+						$(".warndef").text(res.msg).slideDown(600);
 					}
 				}
 			})

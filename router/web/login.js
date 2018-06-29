@@ -16,7 +16,7 @@ module.exports = function(){
 				res.send({
 					status:0,
 					data:null,
-					desc:'查无此人'
+					msg:'查无此人'
 				}).end()
 			}else{
 				if(result[0].password==md5.md5(req.body.password+md5.md5_suffix)){
@@ -25,13 +25,13 @@ module.exports = function(){
 					res.send({
 						status:1,
 						data:'yes',
-						desc:'登录成功'
+						msg:'登录成功'
 					}).end()
 				}else{
 					res.send({
 						status:2,
 						data:'no',
-						desc:'用户名密码错误'
+						msg:'用户名密码错误'
 					}).end()
 				}
 			}
