@@ -13,10 +13,7 @@
       <ul class="nav navbar-nav">
         <li class="<%= where=='index'?'active':''%>"><a href="#">全部说说 <span class="sr-only">(current)</span></a></li>
         <li><a href="#">我的说说</a></li>
-<<<<<<< HEAD
         <li><a href="chat">聊天室</a></li>
-=======
->>>>>>> 007235a8f260b50c59e982f2f4993051520aa895
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -31,11 +28,7 @@
         </li>
       </ul>
       <% if(userInf.login){ %>
-<<<<<<< HEAD
           <p class="navbar-right"  style="color:#fff;line-height:50px;margin:0"><img style="height:30px;width:30px;border-radius:50%" src="" id="zhaopian" alt=""></p>
-=======
-          <p class="navbar-right"  style="color:#fff;line-height:50px;margin:0"><img style="height:30px;width:30px;border-radius:50%" src="<%= userInf.headImg%>" alt=""></p>
->>>>>>> 007235a8f260b50c59e982f2f4993051520aa895
           <p class="navbar-right" style="color:#fff;line-height:50px;margin:0;margin-right:10px;">欢迎：<%= userInf.username%></p> 
       <% }else{%>
         <ul class="nav navbar-nav navbar-right">
@@ -47,7 +40,6 @@
 
   </div>
 </nav>
-<<<<<<< HEAD
 <div class="imgupload container" style="display:none;margin-top:50px;height:150px;border-radius:0 0 5px 5px;background:#ddd">
   <form action= "" method= "post" enctype="multipart/form-data" id="upload">
     <div class="form-group text-center">
@@ -96,16 +88,3 @@
     upLoad()
   })
 </script>
-=======
-<div class="imgupload container" style="position:absolute;top:50px;left:0;right:0;margin:auto;height:150px;border-radius:0 0 5px 5px;background:#ddd">
-  <form action="/upload" method="POST" enctype="multipart/form-data" >
-    <div class="form-group text-center">
-      <div class="inp" style="width:100%;height:50px;position:relative;margin-top:20px;">
-          <input type="file" id="exampleInputFile" name="files" style="display:inline-block;width:100%;height:100%;position:absolute;z-index:10;left:0;top:0;opacity:0;cursor: pointer">
-          <span style="font-size:30px;color:#3e8f3e">请上传你的艳照，谢谢配合</span>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-success btn-lg btn-block" style="">Submit</button>
-  </form>
-</div>
->>>>>>> 007235a8f260b50c59e982f2f4993051520aa895
